@@ -115,13 +115,8 @@ public class Car extends Transport {
     @Override
     public String toString() {
 
-        return "Автомобиль: " + brand +
-                "; марка: " + model +
+        return super.toString() +
                 "; объем двигателя в литрах: " + engineVolume +
-                "; максимальная скорость (км/ч): " + maximumSpeed +
-                "; цвет кузова: " + color +
-                "; год производства: " + year + ";\n" +
-                "   страна сборки: " + country +
                 "; коробка передач: " + transmission +
                 "; тип кузова: " + bodyType +
                 "; регистрационный номер: " + registrationNumber + ";\n" +

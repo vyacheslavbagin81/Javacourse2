@@ -1,12 +1,12 @@
 package com.skypro.javacourse.lessons;
 
 public class Transport {
-    final String brand;
-    String model;
-    final int year;
-    final String country;
-    String color;
-    int maximumSpeed;
+    private final String brand;
+    private String model;
+    private final int year;
+    private final String country;
+    private String color;
+    private int maximumSpeed;
 
     public String getBrand() {
         return brand;
@@ -64,5 +64,15 @@ public class Transport {
         }
         setColor(color);
         setMaximumSpeed(maximumSpeed);
+    }
+    @Override
+    public String toString() {
+
+        return getClass() + " марка: " + brand +
+                "; модель: " + model +
+                "; максимальная скорость (км/ч): " + maximumSpeed +
+                "; цвет кузова: " + color +
+                "; год производства: " + year + ";\n" +
+                "   страна сборки: " + country;
     }
 }

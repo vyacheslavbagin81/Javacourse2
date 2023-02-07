@@ -8,11 +8,6 @@ public class Bus extends Transport{
 
     @Override
     public String toString() {
-        return "Автобус: " + brand +
-                "; модель: " + model +
-                "; год выпуска: " + year +
-                "; страна сборки: " + country + ";\n" +
-                "  цвет: " + color +
-                "; максимальная скорость (км/ч): " + maximumSpeed + ".\n";
+        return super.toString();
     }
 }
