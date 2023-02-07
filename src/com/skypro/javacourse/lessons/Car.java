@@ -116,15 +116,16 @@ public class Car extends Transport {
     public String toString() {
 
         return "Автомобиль: " + brand +
-                "; марка " + model +
-                "; объем двигателя в литрах " + engineVolume +
-                "; цвет кузова " + color +
-                "; год производства " + year + ";\n" +
-                "   страна сборки " + country +
-                "; коробка передач " + transmission +
-                "; тип кузова " + bodyType +
-                "; регистрационный номер " + registrationNumber + ";\n" +
-                "   колличество мест " + numberOfSeats +
-                "; резина " + printTires(tires) + "; " + key;
+                "; марка: " + model +
+                "; объем двигателя в литрах: " + engineVolume +
+                "; максимальная скорость (км/ч): " + maximumSpeed +
+                "; цвет кузова: " + color +
+                "; год производства: " + year + ";\n" +
+                "   страна сборки: " + country +
+                "; коробка передач: " + transmission +
+                "; тип кузова: " + bodyType +
+                "; регистрационный номер: " + registrationNumber + ";\n" +
+                "   колличество мест: " + numberOfSeats +
+                "; резина: " + printTires(tires) + "; " + key;
     }
 }
