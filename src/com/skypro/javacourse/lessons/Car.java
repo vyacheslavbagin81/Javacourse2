@@ -1,12 +1,7 @@
 package com.skypro.javacourse.lessons;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
     private double engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
     private String transmission;
     private final String bodyType;
     private String registrationNumber;
@@ -14,21 +9,7 @@ public class Car {
     private boolean tires;
     private Key key;
 
-    public String getBrand() {
-        return brand;
-    }
 
-    public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
     public String getBodyType() {
         return bodyType;
@@ -46,13 +27,7 @@ public class Car {
         this.engineVolume = (engineVolume <= 0) ? 1.5 : engineVolume;
     }
 
-    public String getColor() {
-        return color;
-    }
 
-    public void setColor(String color) {
-        this.color = (color == null || color.isBlank()) ? "белый" : color;
-    }
 
     public String getTransmission() {
         return transmission;
@@ -105,31 +80,11 @@ public class Car {
         }
     }
 
-    public Car(String brand, String model, double engineVolume,
+    public Car(String brand, String model, double engineVolume, int maximumSpeed,
                String color, int year, String country, String transmission,
                String bodyType, String registrationNumber, int numberOfSeats, Key key) {
-        if (brand == null || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
+        super(brand, model, year, country, color, maximumSpeed);
         setEngineVolume(engineVolume);
-        setColor(color);
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-        if (country == null || country.isBlank()) {
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
         setTransmission(transmission);
         if (bodyType == null || bodyType.isBlank()) {
             this.bodyType = "default";
