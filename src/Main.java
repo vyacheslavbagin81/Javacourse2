@@ -1,9 +1,12 @@
+import com.skypro.javacourse.lessons.Bus;
 import com.skypro.javacourse.lessons.Car;
+
 public class Main {
     public static void main(String[] args) {
         Car lada = new Car("Lada",
                 "Granta",
                 0,
+                160,
                 "желтый",
                 2015,
                 "Россия",
@@ -11,20 +14,23 @@ public class Main {
                 "Седан",
                 "К186КК",
                 5,
-                new Car.Key(false,false));
+                new Car.Key(false, false));
         Car audi = new Car("Audi",
                 "A8 50 L TDI quattro",
-                3, "черный",
+                3,
+                220,
+                "черный",
                 0,
                 "Германия",
                 "Автомат",
                 "Седан",
                 "Е565НГ",
                 5,
-                new Car.Key(true,true));
+                new Car.Key(true, true));
         Car bmw = new Car("BMW",
                 "Z8",
                 3,
+                50,
                 "",
                 2021,
                 "Германия",
@@ -32,10 +38,11 @@ public class Main {
                 "Купе",
                 "А100АА",
                 2,
-                new Car.Key(true,true));
+                new Car.Key(true, true));
         Car kia = new Car("Kia",
                 "   ",
                 2.4,
+                400,
                 "красный",
                 2018,
                 "Южная Корея",
@@ -43,10 +50,11 @@ public class Main {
                 "Кроссовер",
                 "К987ВЕ",
                 5,
-                new Car.Key(true,false));
+                new Car.Key(true, false));
         Car hyundai = new Car(null,
                 "Avante",
                 1.6,
+                280,
                 "оранжевый",
                 2016,
                 "Южная Корея",
@@ -54,7 +62,7 @@ public class Main {
                 "Седан",
                 "",
                 5,
-                new Car.Key(false,true));
+                new Car.Key(false, true));
         System.out.println(lada);
         System.out.println(audi);
         System.out.println(bmw);
@@ -72,5 +80,28 @@ public class Main {
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
+
+        Bus higer = new Bus("Higer",
+                "KLQ 6119",
+                2018,
+                "Китай",
+                "белый",
+                180);
+        Bus paz = new Bus("ПАЗЗ",
+                "32053-20",
+                2010,
+                "Россия",
+                "желтый",
+                160);
+        Bus ikarus  = new Bus("Ikarus ",
+                "250",
+                2001,
+                "Венгрия",
+                "белый",
+                180);
+
+        System.out.println(higer);
+        System.out.println(paz);
+        System.out.println(ikarus);
     }
 }
