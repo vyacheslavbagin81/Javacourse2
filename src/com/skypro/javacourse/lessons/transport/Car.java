@@ -1,8 +1,10 @@
-package com.skypro.javacourse.lessons;
+package com.skypro.javacourse.lessons.transport;
 
-public class Car extends Transport implements Competing {
-    public Car(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+import com.skypro.javacourse.lessons.driver.DriverB;
+
+public class Car extends Transport <DriverB> {
+    public Car(String brand, String model, double engineVolume, DriverB driverB) {
+        super(brand, model, engineVolume, driverB);
     }
 
     @Override

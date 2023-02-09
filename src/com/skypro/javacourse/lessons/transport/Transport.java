@@ -1,9 +1,12 @@
-package com.skypro.javacourse.lessons;
+package com.skypro.javacourse.lessons.transport;
 
-public abstract class Transport {
+import com.skypro.javacourse.lessons.driver.Driver;
+
+public abstract class Transport<T extends Driver> implements Competing {
     private final String brand;
-    private String model;
-    private double engineVolume;
+    private final String model;
+    private final double engineVolume;
+    private final T driver;
 
     public String getBrand() {
         return brand;
@@ -17,7 +20,11 @@ public abstract class Transport {
         return engineVolume;
     }
 
-    public Transport(String brand, String model, double engineVolume) {
+    public T getDriver() {
+        return driver;
+    }
+
+    public Transport(String brand, String model, double engineVolume, T driver) {
         if (brand == null || brand.isBlank()) {
             this.brand = "default";
         } else {
@@ -33,6 +40,7 @@ public abstract class Transport {
         } else {
             this.engineVolume = engineVolume;
         }
+        this.driver = driver;
     }
 
     @Override
@@ -40,15 +48,15 @@ public abstract class Transport {
 
         return getClass() + " марка: " + brand +
                 "; модель: " + model +
-                "; объем двигателя в литрах: " + engineVolume + ".";
+                "; объем двигателя в литрах: " + engineVolume +
+                "; водитель " + driver + ".";
     }
 
-    public void start() {
+    public void startAuto() {
         System.out.println(brand + " " + model + " " + "Начать движение!");
     }
 
-    public void stop() {
+    public void stopAuto() {
         System.out.println(brand + " " + model + " " + "Финиш!");
     }
-
 }

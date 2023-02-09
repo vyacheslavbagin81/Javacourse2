@@ -1,8 +1,10 @@
-package com.skypro.javacourse.lessons;
+package com.skypro.javacourse.lessons.transport;
 
-public class СargoTransport extends Transport implements Competing {
-    public СargoTransport(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+import com.skypro.javacourse.lessons.driver.DriverC;
+
+public class СargoTransport extends Transport <DriverC>{
+    public СargoTransport(String brand, String model, double engineVolume, DriverC driverC) {
+        super(brand, model, engineVolume, driverC);
     }
     @Override
     public void pitStop() {

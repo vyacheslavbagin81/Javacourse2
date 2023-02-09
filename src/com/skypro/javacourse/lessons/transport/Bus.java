@@ -1,8 +1,8 @@
-package com.skypro.javacourse.lessons;
-
-public class Bus extends Transport implements Competing {
-    public Bus(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+package com.skypro.javacourse.lessons.transport;
+import com.skypro.javacourse.lessons.driver.DriverD;
+public class Bus extends Transport<DriverD> {
+    public Bus(String brand, String model, double engineVolume, DriverD driverD) {
+        super(brand, model, engineVolume, driverD);
     }
     @Override
     public void pitStop() {
