@@ -1,65 +1,80 @@
 import com.skypro.javacourse.lessons.Bus;
 import com.skypro.javacourse.lessons.Car;
+import com.skypro.javacourse.lessons.Transport;
 import com.skypro.javacourse.lessons.СargoTransport;
 
 public class Main {
     public static void main(String[] args) {
-        Car lada = new Car("Lada",
+        Car[] arrCar = new Car[4];
+        arrCar[0] = new Car("Lada",
                 "Granta", 1.2);
-        Car audi = new Car("Audi",
+        arrCar[1] = new Car("Audi",
                 "A8 50 L TDI quattro",
                 3);
-        Car bmw = new Car("BMW",
+        arrCar[2] = new Car("BMW",
                 "Z8",
                 3);
-        Car kia = new Car("Kia",
+        arrCar[3] = new Car("Kia",
                 "   ",
                 2.4);
-        Car hyundai = new Car(null,
-                "Avante",
-                1.6);
-        System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-        System.out.println(hyundai);
-
-        Bus higer = new Bus("Higer",
+        for (Car car : arrCar) {
+            System.out.println(car);
+        }
+        Bus[] arrBus = new Bus[4];
+        arrBus[0] = new Bus("Higer",
                 "KLQ 6119",
                 9.5);
-        Bus paz = new Bus("ПАЗЗ",
+        arrBus[1] = new Bus("ПАЗЗ",
                 "32053-20",
                 4.4);
-        Bus ikarus = new Bus("Ikarus ",
+        arrBus[2] = new Bus("Ikarus ",
                 "250",
                 10.7);
-        Bus yutong = new Bus("Yutong",
+        arrBus[3] = new Bus("Yutong",
                 "ZK6122H9",
                 8.9);
 
-        System.out.println(higer);
-        System.out.println(paz);
-        System.out.println(ikarus);
-        System.out.println(yutong);
+        for (Bus bus : arrBus) {
+            System.out.println(bus);
+        }
 
-
-        СargoTransport iveco = new СargoTransport("Iveco",
+        СargoTransport[] arrСargoTransport = new СargoTransport[4];
+        arrСargoTransport[0] = new СargoTransport("Iveco",
                 "Hongyan 8x4",
                 9);
-        СargoTransport faw = new СargoTransport("FAW",
+        arrСargoTransport[1] = new СargoTransport("FAW",
                 "J6",
                 11.1);
-        СargoTransport howo = new СargoTransport("Howo",
+        arrСargoTransport[2] = new СargoTransport("Howo",
                 "T5G",
                 10.5);
-        СargoTransport maz = new СargoTransport("МАЗ",
+        arrСargoTransport[3] = new СargoTransport("МАЗ",
                 "6516",
                 11.1);
 
-        System.out.println(iveco);
-        System.out.println(faw);
-        System.out.println(howo);
-        System.out.println(maz);
-
+        for (СargoTransport cargoTransport : arrСargoTransport) {
+            System.out.println(cargoTransport);
+        }
+        for (Car car : arrCar) {
+            System.out.println();
+            System.out.println(car);
+            car.pitStop();
+            car.bestLapTime();
+            car.maximumSpeed();
+        }
+        for (Bus bus : arrBus) {
+            System.out.println();
+            System.out.println(bus);
+            bus.pitStop();
+            bus.bestLapTime();
+            bus.maximumSpeed();
+        }
+        for (СargoTransport cargoTransport : arrСargoTransport) {
+            System.out.println();
+            System.out.println(cargoTransport);
+            cargoTransport.pitStop();
+            cargoTransport.bestLapTime();
+            cargoTransport.maximumSpeed();
+        }
     }
 }

@@ -40,7 +40,7 @@ public abstract class Transport {
 
         return getClass() + " марка: " + brand +
                 "; модель: " + model +
-                "; объем двигателя в литрах: " + engineVolume + ";\n";
+                "; объем двигателя в литрах: " + engineVolume + ".";
     }
 
     public void start() {
