@@ -1,80 +1,23 @@
 import com.skypro.javacourse.lessons.Bus;
 import com.skypro.javacourse.lessons.Car;
+import com.skypro.javacourse.lessons.СargoTransport;
 
 public class Main {
     public static void main(String[] args) {
         Car lada = new Car("Lada",
-                "Granta",
-                0,
-                160,
-                "желтый",
-                2015,
-                "Россия",
-                "Механическая",
-                "Седан",
-                "К186КК",
-                5,
-                new Car.Key(false, false));
+                "Granta", 1.2);
         Car audi = new Car("Audi",
                 "A8 50 L TDI quattro",
-                3,
-                220,
-                "черный",
-                0,
-                "Германия",
-                "Автомат",
-                "Седан",
-                "Е565НГ",
-                5,
-                new Car.Key(true, true));
+                3);
         Car bmw = new Car("BMW",
                 "Z8",
-                3,
-                50,
-                "",
-                2021,
-                "Германия",
-                "Автомат",
-                "Купе",
-                "А100АА",
-                2,
-                new Car.Key(true, true));
+                3);
         Car kia = new Car("Kia",
                 "   ",
-                2.4,
-                400,
-                "красный",
-                2018,
-                "Южная Корея",
-                "Автомат",
-                "Кроссовер",
-                "К987ВЕ",
-                5,
-                new Car.Key(true, false));
+                2.4);
         Car hyundai = new Car(null,
                 "Avante",
-                1.6,
-                280,
-                "оранжевый",
-                2016,
-                "Южная Корея",
-                "Автомат",
-                "Седан",
-                "",
-                5,
-                new Car.Key(false, true));
-        System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-        System.out.println(hyundai);
-
-        lada.changingTires(5);
-        audi.changingTires(11);
-        bmw.changingTires(10);
-        kia.changingTires(6);
-        hyundai.changingTires(1);
-
+                1.6);
         System.out.println(lada);
         System.out.println(audi);
         System.out.println(bmw);
@@ -83,25 +26,40 @@ public class Main {
 
         Bus higer = new Bus("Higer",
                 "KLQ 6119",
-                2018,
-                "Китай",
-                "белый",
-                180);
+                9.5);
         Bus paz = new Bus("ПАЗЗ",
                 "32053-20",
-                2010,
-                "Россия",
-                "желтый",
-                160);
-        Bus ikarus  = new Bus("Ikarus ",
+                4.4);
+        Bus ikarus = new Bus("Ikarus ",
                 "250",
-                2001,
-                "Венгрия",
-                "белый",
-                180);
+                10.7);
+        Bus yutong = new Bus("Yutong",
+                "ZK6122H9",
+                8.9);
 
         System.out.println(higer);
         System.out.println(paz);
         System.out.println(ikarus);
+        System.out.println(yutong);
+
+
+        СargoTransport iveco = new СargoTransport("Iveco",
+                "Hongyan 8x4",
+                9);
+        СargoTransport faw = new СargoTransport("FAW",
+                "J6",
+                11.1);
+        СargoTransport howo = new СargoTransport("Howo",
+                "T5G",
+                10.5);
+        СargoTransport maz = new СargoTransport("МАЗ",
+                "6516",
+                11.1);
+
+        System.out.println(iveco);
+        System.out.println(faw);
+        System.out.println(howo);
+        System.out.println(maz);
+
     }
 }
