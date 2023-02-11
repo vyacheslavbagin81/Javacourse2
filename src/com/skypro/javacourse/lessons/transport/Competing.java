@@ -1,9 +1,9 @@
 package com.skypro.javacourse.lessons.transport;
 
 public interface Competing {
-    public void pitStop();
+    void pitStop();
 
-    public void bestLapTime();
+    void bestLapTime();
 
-    public void maximumSpeed();
+    void maximumSpeed();
 }

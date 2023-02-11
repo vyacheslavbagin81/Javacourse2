@@ -5,15 +5,16 @@ public class DriverD extends Driver {
     public DriverD(String fullName, boolean driversLicense, int drivingExperience) {
         super(fullName, driversLicense, drivingExperience);
     }
-    void start() {
-        System.out.println("Водитель автобуса начал заезд");
+
+    public String start() {
+        return "Водитель " + fullName + "  начал заезд на автобусе ";
     }
 
-    void stop() {
-        System.out.println("Водитель автобуса закончил заезд");
+    public String stop() {
+        return "Водитель " + fullName + "  закончил заезд на автобусе ";
     }
 
-    void refuelTheCar() {
-        System.out.println("Водитель автобуса заехал на заправку");
+    public String refuelTheCar() {
+        return "Водитель " + fullName + "  заправляет автобус ";
     }
 }

@@ -1,5 +1,6 @@
 package com.skypro.javacourse.lessons.transport;
 
+import com.skypro.javacourse.lessons.driver.Driver;
 import com.skypro.javacourse.lessons.driver.DriverB;
 
 public class Car extends Transport <DriverB> {
@@ -9,7 +10,7 @@ public class Car extends Transport <DriverB> {
 
     @Override
     public void pitStop() {
-        System.out.println("Остановка на пит-стоп");
+        System.out.println("Остановка на пит-стоп ");
     }
 
     @Override

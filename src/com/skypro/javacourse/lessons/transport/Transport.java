@@ -53,10 +53,10 @@ public abstract class Transport<T extends Driver> implements Competing {
     }
 
     public void startAuto() {
-        System.out.println(brand + " " + model + " " + "Начать движение!");
+        System.out.println(driver.start() + getBrand()+" "+getModel());
     }
 
     public void stopAuto() {
-        System.out.println(brand + " " + model + " " + "Финиш!");
+        System.out.println(driver.stop() + getBrand()+" "+getModel());;
     }
 }

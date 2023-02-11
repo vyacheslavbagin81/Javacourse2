@@ -4,15 +4,15 @@ public class DriverC extends Driver{
     public DriverC(String fullName, boolean driversLicense, int drivingExperience) {
         super(fullName, driversLicense, drivingExperience);
     }
-    void start() {
-        System.out.println("Водитель грузовика начал заезд");
+    public String start() {
+        return "Водитель " + fullName + "  начал заезд на грузовике ";
     }
 
-    void stop() {
-        System.out.println("Водитель грузовика закончил заезд");
+    public String stop() {
+        return "Водитель " + fullName + "  закончил заезд на грузовике ";
     }
 
-    void refuelTheCar() {
-        System.out.println("Водитель грузовика заехал на заправку");
+    public String refuelTheCar() {
+        return "Водитель " + fullName + "  заправляет грузовик ";
     }
 }

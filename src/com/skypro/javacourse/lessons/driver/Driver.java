@@ -1,6 +1,5 @@
 package com.skypro.javacourse.lessons.driver;
 
-import com.skypro.javacourse.lessons.transport.Transport;
 
 public abstract class Driver {
     String fullName;
@@ -25,13 +24,16 @@ public abstract class Driver {
         this.drivingExperience = drivingExperience;
     }
 
-    void start() {
+    public String start() {
+        return "";
     }
 
-    void stop() {
+    public String stop() {
+        return "";
     }
 
-    void refuelTheCar() {
+    public String refuelTheCar() {
+        return "";
     }
 
     @Override

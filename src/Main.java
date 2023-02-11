@@ -87,6 +87,7 @@ public class Main {
         for (Transport<?> transport:transports) {
             printInfo(transport);
         }
+        transports[0].startAuto();
 
     }
 
