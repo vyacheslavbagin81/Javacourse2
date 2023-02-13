@@ -1,3 +1,4 @@
+import com.skypro.javacourse.lessons.driver.Driver;
 import com.skypro.javacourse.lessons.driver.DriverB;
 import com.skypro.javacourse.lessons.driver.DriverC;
 import com.skypro.javacourse.lessons.driver.DriverD;
@@ -84,10 +85,10 @@ public class Main {
             System.out.println(transports[i]);
         }
         System.out.println();
-        for (Transport<?> transport:transports) {
+        for (Transport<Driver> transport:transports) {
             printInfo(transport);
         }
-        transports[0].startAuto();
+        System.out.println(transports[0].pitStop());
 
     }
 

@@ -1,7 +1,9 @@
 package com.skypro.javacourse.lessons.driver;
 
 
-public abstract class Driver {
+import com.skypro.javacourse.lessons.Movement;
+
+public abstract class Driver implements Movement {
     String fullName;
     boolean driversLicense;
     int drivingExperience;
@@ -24,17 +26,14 @@ public abstract class Driver {
         this.drivingExperience = drivingExperience;
     }
 
-    public String start() {
-        return "";
-    }
+    @Override
+    public abstract String start();
 
-    public String stop() {
-        return "";
-    }
+    @Override
+    public abstract String stop();
 
-    public String refuelTheCar() {
-        return "";
-    }
+    @Override
+    public abstract String pitStop();
 
     @Override
     public String toString() {

@@ -7,8 +7,8 @@ public class СargoTransport extends Transport <DriverC>{
         super(brand, model, engineVolume, driverC);
     }
     @Override
-    public void pitStop() {
-        System.out.println("Остановка на пит-стоп");
+    public String pitStop() {
+        return ("Остановка на пит-стоп");
     }
 
     @Override

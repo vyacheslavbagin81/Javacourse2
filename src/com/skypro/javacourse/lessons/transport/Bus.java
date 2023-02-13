@@ -5,8 +5,8 @@ public class Bus extends Transport<DriverD> {
         super(brand, model, engineVolume, driverD);
     }
     @Override
-    public void pitStop() {
-        System.out.println("Остановка на пит-стоп");
+    public String pitStop() {
+        return ("Остановка на пит-стоп");
     }
 
     @Override

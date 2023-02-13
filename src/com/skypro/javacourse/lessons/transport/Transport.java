@@ -1,8 +1,9 @@
 package com.skypro.javacourse.lessons.transport;
 
+import com.skypro.javacourse.lessons.Movement;
 import com.skypro.javacourse.lessons.driver.Driver;
 
-public abstract class Transport<T extends Driver> implements Competing {
+public abstract class Transport<T extends Driver> implements Competing, Movement {
     private final String brand;
     private final String model;
     private final double engineVolume;
@@ -52,11 +53,20 @@ public abstract class Transport<T extends Driver> implements Competing {
                 "; водитель " + driver + ".";
     }
 
-    public void startAuto() {
-        System.out.println(driver.start() + getBrand()+" "+getModel());
+    @Override
+    public String start() {
+        return (driver.start() + getBrand() + " " + getModel());
     }
 
-    public void stopAuto() {
-        System.out.println(driver.stop() + getBrand()+" "+getModel());;
+    @Override
+    public String stop() {
+        return (driver.stop() + getBrand() + " " + getModel());
     }
+
+    @Override
+    public String pitStop() {
+        return (driver.pitStop() + getBrand() + " " + getModel());
+    }
+
+    ;
 }

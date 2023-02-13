@@ -6,15 +6,18 @@ public class DriverD extends Driver {
         super(fullName, driversLicense, drivingExperience);
     }
 
+    @Override
     public String start() {
         return "Водитель " + fullName + "  начал заезд на автобусе ";
     }
 
+    @Override
     public String stop() {
         return "Водитель " + fullName + "  закончил заезд на автобусе ";
     }
 
-    public String refuelTheCar() {
+    @Override
+    public String pitStop() {
         return "Водитель " + fullName + "  заправляет автобус ";
     }
 }

@@ -9,11 +9,6 @@ public class Car extends Transport <DriverB> {
     }
 
     @Override
-    public void pitStop() {
-        System.out.println("Остановка на пит-стоп ");
-    }
-
-    @Override
     public void bestLapTime() {
         System.out.println("Лучшее время " + getBrand() + " " + getModel() + " - ....");
     }
