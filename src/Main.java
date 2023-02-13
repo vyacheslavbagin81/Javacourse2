@@ -1,107 +1,98 @@
-import com.skypro.javacourse.lessons.Bus;
-import com.skypro.javacourse.lessons.Car;
+import com.skypro.javacourse.lessons.driver.Driver;
+import com.skypro.javacourse.lessons.driver.DriverB;
+import com.skypro.javacourse.lessons.driver.DriverC;
+import com.skypro.javacourse.lessons.driver.DriverD;
+import com.skypro.javacourse.lessons.transport.Bus;
+import com.skypro.javacourse.lessons.transport.Car;
+import com.skypro.javacourse.lessons.transport.Transport;
+import com.skypro.javacourse.lessons.transport.СargoTransport;
 
 public class Main {
     public static void main(String[] args) {
-        Car lada = new Car("Lada",
-                "Granta",
-                0,
-                160,
-                "желтый",
-                2015,
-                "Россия",
-                "Механическая",
-                "Седан",
-                "К186КК",
-                5,
-                new Car.Key(false, false));
-        Car audi = new Car("Audi",
+        Car[] arrCar = new Car[4];
+        arrCar[0] = new Car("Lada",
+                "Granta", 1.2,
+                new DriverB("Ivan", true, 2));
+        arrCar[1] = new Car("Audi",
                 "A8 50 L TDI quattro",
                 3,
-                220,
-                "черный",
-                0,
-                "Германия",
-                "Автомат",
-                "Седан",
-                "Е565НГ",
-                5,
-                new Car.Key(true, true));
-        Car bmw = new Car("BMW",
+                new DriverB("Stepan", true, 3));
+        arrCar[2] = new Car("BMW",
                 "Z8",
                 3,
-                50,
-                "",
-                2021,
-                "Германия",
-                "Автомат",
-                "Купе",
-                "А100АА",
-                2,
-                new Car.Key(true, true));
-        Car kia = new Car("Kia",
+                new DriverB("Ilya", true, 5));
+        arrCar[3] = new Car("Kia",
                 "   ",
                 2.4,
-                400,
-                "красный",
-                2018,
-                "Южная Корея",
-                "Автомат",
-                "Кроссовер",
-                "К987ВЕ",
-                5,
-                new Car.Key(true, false));
-        Car hyundai = new Car(null,
-                "Avante",
-                1.6,
-                280,
-                "оранжевый",
-                2016,
-                "Южная Корея",
-                "Автомат",
-                "Седан",
-                "",
-                5,
-                new Car.Key(false, true));
-        System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-        System.out.println(hyundai);
+                new DriverB("Petr", true, 4));
 
-        lada.changingTires(5);
-        audi.changingTires(11);
-        bmw.changingTires(10);
-        kia.changingTires(6);
-        hyundai.changingTires(1);
-
-        System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-        System.out.println(hyundai);
-
-        Bus higer = new Bus("Higer",
+        Bus[] arrBus = new Bus[4];
+        arrBus[0] = new Bus("Higer",
                 "KLQ 6119",
-                2018,
-                "Китай",
-                "белый",
-                180);
-        Bus paz = new Bus("ПАЗЗ",
+                9.5,
+                new DriverD("Oleg", true, 6));
+        arrBus[1] = new Bus("ПАЗЗ",
                 "32053-20",
-                2010,
-                "Россия",
-                "желтый",
-                160);
-        Bus ikarus  = new Bus("Ikarus ",
+                4.4,
+                new DriverD("Demid", true, 6));
+        arrBus[2] = new Bus("Ikarus ",
                 "250",
-                2001,
-                "Венгрия",
-                "белый",
-                180);
+                10.7,
+                new DriverD("Gosha", true, 6));
+        arrBus[3] = new Bus("Yutong",
+                "ZK6122H9",
+                8.9,
+                new DriverD("Anton", true, 6));
 
-        System.out.println(higer);
-        System.out.println(paz);
-        System.out.println(ikarus);
+
+        СargoTransport[] arrСargoTransport = new СargoTransport[4];
+        arrСargoTransport[0] = new СargoTransport("Iveco",
+                "Hongyan 8x4",
+                9,
+                new DriverC("Roma", true, 7));
+        arrСargoTransport[1] = new СargoTransport("FAW",
+                "J6",
+                11.1,
+                new DriverC("Denis", true, 7));
+        arrСargoTransport[2] = new СargoTransport("Howo",
+                "T5G",
+                10.5,
+                new DriverC("Misha", true, 7));
+        arrСargoTransport[3] = new СargoTransport("МАЗ",
+                "6516",
+                11.1,
+                new DriverC("Artur", true, 7));
+
+
+        Transport[] transports = new Transport[arrCar.length +
+                arrBus.length + arrСargoTransport.length];
+        int j = 0;
+        for (int i = 0; i < arrCar.length; i++) {
+            transports[i] = arrCar[j];
+            j++;
+        }
+        j = 0;
+        for (int i = arrCar.length; i < arrCar.length + arrBus.length; i++) {
+            transports[i] = arrBus[j];
+            j++;
+        }
+        j = 0;
+        for (int i = arrCar.length + arrBus.length; i < transports.length; i++) {
+            transports[i] = arrСargoTransport[j];
+            j++;
+        }
+        for (int i = 0; i < transports.length; i++) {
+            System.out.println(transports[i]);
+        }
+        System.out.println();
+        for (Transport<Driver> transport:transports) {
+            printInfo(transport);
+        }
+        System.out.println(transports[0].pitStop());
+
+    }
+
+    private static void printInfo(Transport<?> transport) {
+        System.out.println("водитель " + transport.getDriver().getFullName() + " управляет " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде");
     }
 }
