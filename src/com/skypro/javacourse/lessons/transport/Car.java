@@ -4,8 +4,10 @@ import com.skypro.javacourse.lessons.driver.Driver;
 import com.skypro.javacourse.lessons.driver.DriverB;
 
 public class Car extends Transport <DriverB> {
-    public Car(String brand, String model, double engineVolume, DriverB driverB) {
+    BodyCar bodyCar;
+    public Car(String brand, String model, double engineVolume,BodyCar bodyCar, DriverB driverB) {
         super(brand, model, engineVolume, driverB);
+        this.bodyCar = bodyCar;
     }
 
     @Override
@@ -16,5 +18,10 @@ public class Car extends Transport <DriverB> {
     @Override
     public void maximumSpeed() {
         System.out.println("Максимальная скорость за гонку у " + getBrand() + " " + getModel() + " - ....");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + bodyCar;
     }
 }
