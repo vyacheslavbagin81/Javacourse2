@@ -1,4 +1,4 @@
-package com.skypro.javacourse.lessons.transport;
+package com.skypro.javacourse.lessons.enums;
 
 public enum BodyCar {
     SEDAN("Седан"),

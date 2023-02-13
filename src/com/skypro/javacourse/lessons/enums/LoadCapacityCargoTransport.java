@@ -1,4 +1,4 @@
-package com.skypro.javacourse.lessons.transport;
+package com.skypro.javacourse.lessons.enums;
 
 public enum LoadCapacityCargoTransport {
     N1("с полной массой до 3,5 тонн"),

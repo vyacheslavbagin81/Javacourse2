@@ -1,9 +1,10 @@
 package com.skypro.javacourse.lessons.transport;
 
 import com.skypro.javacourse.lessons.driver.DriverD;
+import com.skypro.javacourse.lessons.enums.СapacityBus;
 
 public class Bus extends Transport<DriverD> {
-    СapacityBus сapacityBus;
+    private СapacityBus сapacityBus;
 
     public Bus(String brand, String model, double engineVolume, DriverD driverD, int сapacity) {
         super(brand, model, engineVolume, driverD);

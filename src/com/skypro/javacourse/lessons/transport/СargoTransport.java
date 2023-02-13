@@ -1,9 +1,10 @@
 package com.skypro.javacourse.lessons.transport;
 
 import com.skypro.javacourse.lessons.driver.DriverC;
+import com.skypro.javacourse.lessons.enums.LoadCapacityCargoTransport;
 
 public class СargoTransport extends Transport<DriverC> {
-    LoadCapacityCargoTransport bodyСargoTransport;
+    private LoadCapacityCargoTransport bodyСargoTransport;
 
     public СargoTransport(String brand, String model, double engineVolume, DriverC driverC, float loadCapacity) {
         super(brand, model, engineVolume, driverC);
