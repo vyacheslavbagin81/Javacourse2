@@ -6,7 +6,7 @@ public enum СapacityBus {
     AVERAGE ("25-50 мест"),
     LARGE ("50-80 мест"),
     ESPECIALLY_LARGE ("80-120 мест"),
-    INCORRECT("Неверные данные");
+    INCORRECT(" Неверные данные");
 
     String capacity;
 

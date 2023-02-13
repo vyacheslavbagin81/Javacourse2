@@ -92,6 +92,11 @@ public class Main {
         }
         System.out.println(transports[0].pitStop());
 
+        System.out.println();
+        transports[2].printType();
+        transports[5].printType();
+        transports[9].printType();
+
     }
 
     private static void printInfo(Transport<?> transport) {

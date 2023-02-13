@@ -17,8 +17,12 @@ public enum BodyCar {
         this.body = body;
     }
 
+    public String getBody() {
+        return body;
+    }
+
     @Override
     public String toString() {
-        return "Тип кузова " + body + ". ";
+        return " Тип кузова " + body + ". ";
     }
 }

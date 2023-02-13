@@ -4,15 +4,15 @@ import com.skypro.javacourse.lessons.driver.DriverC;
 import com.skypro.javacourse.lessons.enums.LoadCapacityCargoTransport;
 
 public class СargoTransport extends Transport<DriverC> {
-    private LoadCapacityCargoTransport bodyСargoTransport;
+    private LoadCapacityCargoTransport loadCapacityCargoTransport;
 
     public СargoTransport(String brand, String model, double engineVolume, DriverC driverC, float loadCapacity) {
         super(brand, model, engineVolume, driverC);
-        this.bodyСargoTransport = loadCapacityCheck(loadCapacity);
+        this.loadCapacityCargoTransport = loadCapacityCheck(loadCapacity);
     }
 
     private LoadCapacityCargoTransport loadCapacityCheck(float loadCapacity) {
-        if (loadCapacity<1.5 && loadCapacity>300) {
+        if (loadCapacity < 1.5 && loadCapacity > 300) {
             if (loadCapacity <= 3.5) {
                 return LoadCapacityCargoTransport.N1;
             } else if (loadCapacity <= 12) {
@@ -39,7 +39,12 @@ public class СargoTransport extends Transport<DriverC> {
     }
 
     @Override
+    public void printType() {
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + loadCapacityCargoTransport.getLoadCapacity());
+    }
+
+    @Override
     public String toString() {
-        return super.toString() + bodyСargoTransport;
+        return super.toString() + loadCapacityCargoTransport;
     }
 }

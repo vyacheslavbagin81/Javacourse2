@@ -4,7 +4,7 @@ public enum LoadCapacityCargoTransport {
     N1("с полной массой до 3,5 тонн"),
     N2("с полной массой от 3,5 до 12 тонн"),
     N3("с полной массой свыше 12 тонн"),
-    INCORRECT("Неверные данные");
+    INCORRECT(" Неверные данные");
     String loadCapacity;
 
     LoadCapacityCargoTransport(String loadCapacity) {
@@ -18,6 +18,6 @@ public enum LoadCapacityCargoTransport {
 
     @Override
     public String toString() {
-        return " Грузовик " + getLoadCapacity();
+        return getLoadCapacity();
     }
 }
