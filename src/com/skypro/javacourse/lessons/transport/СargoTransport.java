@@ -12,7 +12,7 @@ public class СargoTransport extends Transport<DriverC> {
     }
 
     private LoadCapacityCargoTransport loadCapacityCheck(float loadCapacity) {
-        if (loadCapacity < 1.5 && loadCapacity > 300) {
+        if (loadCapacity > 1.5 && loadCapacity < 300) {
             if (loadCapacity <= 3.5) {
                 return LoadCapacityCargoTransport.N1;
             } else if (loadCapacity <= 12) {

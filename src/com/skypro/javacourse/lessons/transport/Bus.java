@@ -44,7 +44,7 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public void printType() {
-        System.out.println("Автобус " + getBrand() + " " + getModel() + " обычно имеет " + сapacityBus.getCapacity());
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " обычно имеет " + сapacityBus.toString());
     }
 
     @Override

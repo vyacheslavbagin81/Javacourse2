@@ -1,26 +1,39 @@
 package com.skypro.javacourse.lessons.enums;
 
 public enum СapacityBus {
-    ESPECIALLY_SMALL ("до 10 мест"),
-    SMALL ("10-25 мест"),
-    AVERAGE ("25-50 мест"),
-    LARGE ("50-80 мест"),
-    ESPECIALLY_LARGE ("80-120 мест"),
-    INCORRECT(" Неверные данные");
+    ESPECIALLY_SMALL(0, 10),
+    SMALL(10, 25),
+    AVERAGE(25, 50),
+    LARGE(50, 80),
+    ESPECIALLY_LARGE(80, 120),
+    INCORRECT(-1,-1);
 
-    String capacity;
+    Integer capacityMin;
+    Integer capacityMax;
 
-    СapacityBus(String capacity) {
-        this.capacity = capacity;
+    СapacityBus(Integer capacityMin, Integer capacityMax) {
+        this.capacityMin = capacityMin;
+        this.capacityMax = capacityMax;
     }
 
-    public String getCapacity() {
-        return capacity;
+    public Integer getCapacityMin() {
+        return capacityMin;
+    }
+
+    public Integer getCapacityMax() {
+        return capacityMax;
     }
 
     @Override
     public String toString() {
-        return " Вместимость данного класса автобусов: " +
-                getCapacity();
+        if (getCapacityMin() == 0) {
+            return " до " +
+                    getCapacityMax() + " посадочных мест";
+        } else if (getCapacityMin()==-1){
+            return " Не коректные данные";
+        }else {
+            return " от " +
+                    getCapacityMin() + " до " + getCapacityMax() + " посадочных мест";
+        }
     }
-}
+    }
