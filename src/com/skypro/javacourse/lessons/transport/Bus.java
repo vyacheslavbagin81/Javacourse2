@@ -1,5 +1,6 @@
 package com.skypro.javacourse.lessons.transport;
 
+import com.skypro.javacourse.lessons.TransportTypeException;
 import com.skypro.javacourse.lessons.driver.DriverD;
 import com.skypro.javacourse.lessons.enums.СapacityBus;
 
@@ -10,6 +11,9 @@ public class Bus extends Transport<DriverD> {
         super(brand, model, engineVolume, driverD);
         this.сapacityBus = сapacityBusCheck(сapacity);
     }
+
+    /**    метод обработки получаемого значения вместимости пассажиров
+     * и присвоение значения из списка CapacityBus */
 
     private СapacityBus сapacityBusCheck(int capacity) {
         if (capacity > 7 && capacity <= 120) {
@@ -30,6 +34,15 @@ public class Bus extends Transport<DriverD> {
     @Override
     public String pitStop() {
         return ("Остановка на пит-стоп");
+    }
+
+    @Override
+    public void passDiagnostics() {
+        try {
+            throw new TransportTypeException();
+        } catch (TransportTypeException e) {
+            System.out.println("Автобусы на диагностику не отправляем!");;
+        }
     }
 
     @Override

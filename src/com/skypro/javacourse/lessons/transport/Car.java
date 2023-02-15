@@ -30,4 +30,9 @@ public class Car extends Transport<DriverB> {
     public String toString() {
         return super.toString() + bodyCar;
     }
+
+    @Override
+    public void passDiagnostics() {
+        System.out.println("Автомобиль " + getBrand() + " " + getModel() + " пора отправить на диагностику.");
+    }
 }

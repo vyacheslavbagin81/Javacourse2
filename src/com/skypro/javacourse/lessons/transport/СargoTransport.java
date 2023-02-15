@@ -11,6 +11,8 @@ public class СargoTransport extends Transport<DriverC> {
         this.loadCapacityCargoTransport = loadCapacityCheck(loadCapacity);
     }
 
+    /** метод обработки получаемого значения грузоподъемности
+     * и присвоение значения из списка LoadCapacityCargoTransport */
     private LoadCapacityCargoTransport loadCapacityCheck(float loadCapacity) {
         if (loadCapacity > 1.5 && loadCapacity < 300) {
             if (loadCapacity <= 3.5) {
@@ -26,6 +28,11 @@ public class СargoTransport extends Transport<DriverC> {
     @Override
     public String pitStop() {
         return ("Остановка на пит-стоп");
+    }
+
+    @Override
+    public void passDiagnostics() {
+        System.out.println("Грузовик "+getBrand()+" "+getModel()+" пора отправить на диагностику.");
     }
 
     @Override

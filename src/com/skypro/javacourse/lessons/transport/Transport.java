@@ -55,6 +55,7 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
                 "; водитель " + driver + ".";
     }
 
+    //    методы из интерфейса Movement
     @Override
     public String start() {
         return (driver.start() + getBrand() + " " + getModel());
@@ -70,5 +71,7 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
         return (driver.pitStop() + getBrand() + " " + getModel());
     }
 
-    ;
+    // метод отправки на диагностику
+    public abstract void passDiagnostics();
 }
+
