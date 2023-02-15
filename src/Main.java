@@ -1,3 +1,4 @@
+import com.skypro.javacourse.lessons.TransportTypeException;
 import com.skypro.javacourse.lessons.driver.Driver;
 import com.skypro.javacourse.lessons.driver.DriverB;
 import com.skypro.javacourse.lessons.driver.DriverC;
@@ -7,6 +8,8 @@ import com.skypro.javacourse.lessons.transport.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        // создаем объекты класса Car
         Car[] arrCar = new Car[4];
         arrCar[0] = new Car("Lada",
                 "Granta", 1.2, BodyCar.SEDAN,
@@ -24,6 +27,7 @@ public class Main {
                 2.4, BodyCar.CROSSOVER,
                 new DriverB("Petr", true, 4));
 
+        // создаем объекты класса Bus
         Bus[] arrBus = new Bus[4];
         arrBus[0] = new Bus("Higer",
                 "KLQ 6119",
@@ -42,7 +46,7 @@ public class Main {
                 8.9,
                 new DriverD("Anton", true, 6), 130);
 
-
+        // создаем объекты класса СargoTransport
         СargoTransport[] arrСargoTransport = new СargoTransport[4];
         arrСargoTransport[0] = new СargoTransport("Iveco",
                 "Hongyan 8x4",
@@ -65,7 +69,7 @@ public class Main {
                 new DriverC("Artur", true, 7),
                 10);
 
-
+        // упаковываем объекты классов Car,  Bus и СargoTransport в массив родительского класса Transport
         Transport[] transports = new Transport[arrCar.length +
                 arrBus.length + arrСargoTransport.length];
         int j = 0;
@@ -83,23 +87,51 @@ public class Main {
             transports[i] = arrСargoTransport[j];
             j++;
         }
+
+        // выводим информацию о созданных объектах
         for (Transport transport : transports) {
             System.out.println(transport);
         }
+
+        // используем метод для вывода информации об участии в гонках
         System.out.println();
-        for (Transport<Driver> transport:transports) {
+        for (Transport<Driver> transport : transports) {
             printInfo(transport);
         }
+
+        // выводим информацию о том что transports[0] заехал на pitStop
+        System.out.println();
         System.out.println(transports[0].pitStop());
 
+        // выводим информацию о типах транспортных средств
+        // кузов у авто, вместимость у автобусов, грузоподъемность у грузовиков
         System.out.println();
         transports[2].printType();
         transports[5].printType();
         transports[9].printType();
 
+        // метод отправки на диагностику
+        System.out.println();
+        checkPassDiagnostics(transports[2]);
+        checkPassDiagnostics(transports[6]);
+        checkPassDiagnostics(transports[9]);
+
+
     }
 
+    // метод для вывода информации об участии в заезде
     private static void printInfo(Transport<?> transport) {
-        System.out.println("водитель " + transport.getDriver().getFullName() + " управляет " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде");
+        System.out.println("водитель " + transport.getDriver().getFullName() +
+                " управляет " + transport.getBrand() + " " + transport.getModel()
+                + " и будет участвовать в заезде");
+    }
+
+    // метод для проверки на ошибку
+    public static void checkPassDiagnostics(Transport transport) {
+        try {
+            transport.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }
