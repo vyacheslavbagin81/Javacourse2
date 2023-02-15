@@ -1,6 +1,7 @@
 package com.skypro.javacourse.lessons.transport;
 
 import com.skypro.javacourse.lessons.Movement;
+import com.skypro.javacourse.lessons.TransportTypeException;
 import com.skypro.javacourse.lessons.driver.Driver;
 
 public abstract class Transport<T extends Driver> implements Competing, Movement {
@@ -72,6 +73,6 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
     }
 
     // метод отправки на диагностику
-    public abstract void passDiagnostics();
+    public abstract void passDiagnostics() throws TransportTypeException;
 }
 

@@ -37,12 +37,8 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
-    public void passDiagnostics() {
-        try {
-            throw new TransportTypeException();
-        } catch (TransportTypeException e) {
-            System.out.println("Автобусы на диагностику не отправляем!");;
-        }
+    public void passDiagnostics() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы на диагностику не отправляем!");
     }
 
     @Override

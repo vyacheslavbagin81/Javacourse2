@@ -1,3 +1,4 @@
+import com.skypro.javacourse.lessons.TransportTypeException;
 import com.skypro.javacourse.lessons.driver.Driver;
 import com.skypro.javacourse.lessons.driver.DriverB;
 import com.skypro.javacourse.lessons.driver.DriverC;
@@ -94,7 +95,7 @@ public class Main {
 
         // используем метод для вывода информации об участии в гонках
         System.out.println();
-        for (Transport<Driver> transport:transports) {
+        for (Transport<Driver> transport : transports) {
             printInfo(transport);
         }
 
@@ -111,9 +112,10 @@ public class Main {
 
         // метод отправки на диагностику
         System.out.println();
-        transports[2].passDiagnostics();
-        transports[5].passDiagnostics();
-        transports[9].passDiagnostics();
+        checkPassDiagnostics(transports[2]);
+        checkPassDiagnostics(transports[5]);
+        checkPassDiagnostics(transports[9]);
+
 
     }
 
@@ -122,5 +124,14 @@ public class Main {
         System.out.println("водитель " + transport.getDriver().getFullName() +
                 " управляет " + transport.getBrand() + " " + transport.getModel()
                 + " и будет участвовать в заезде");
+    }
+
+    // метод для проверки на ошибку
+    public static void checkPassDiagnostics(Transport transport) {
+        try {
+            transport.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println("Автобусы на диагностику не отправляем!");
+        }
     }
 }
