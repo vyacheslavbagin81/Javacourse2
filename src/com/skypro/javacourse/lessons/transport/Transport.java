@@ -44,6 +44,8 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
         this.driver = driver;
     }
 
+    public abstract void printType();
+
     @Override
     public String toString() {
 
