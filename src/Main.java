@@ -113,7 +113,7 @@ public class Main {
         // метод отправки на диагностику
         System.out.println();
         checkPassDiagnostics(transports[2]);
-        checkPassDiagnostics(transports[5]);
+        checkPassDiagnostics(transports[6]);
         checkPassDiagnostics(transports[9]);
 
 
@@ -131,7 +131,7 @@ public class Main {
         try {
             transport.passDiagnostics();
         } catch (TransportTypeException e) {
-            System.out.println("Автобусы на диагностику не отправляем!");
+            System.err.println(e.getMessage());
         }
     }
 }
