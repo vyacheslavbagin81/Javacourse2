@@ -2,13 +2,20 @@ package com.skypro.javacourse.lessons.transport;
 
 import com.skypro.javacourse.lessons.Movement;
 import com.skypro.javacourse.lessons.TransportTypeException;
+import com.skypro.javacourse.lessons.carService.CarMechanic;
 import com.skypro.javacourse.lessons.driver.Driver;
+import com.skypro.javacourse.lessons.enums.Type;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Transport<T extends Driver> implements Competing, Movement {
     private final String brand;
     private final String model;
     private final double engineVolume;
     private final T driver;
+    private Type type;
+    private List<CarMechanic> carMechanicList;
 
     public String getBrand() {
         return brand;
@@ -22,11 +29,23 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
         return engineVolume;
     }
 
+    public Type getType() {
+        return type;
+    }
+
     public T getDriver() {
         return driver;
     }
 
-    public Transport(String brand, String model, double engineVolume, T driver) {
+    public List<CarMechanic> getCarMechanicList() {
+        return carMechanicList;
+    }
+
+    public void setCarMechanicList(List<CarMechanic> carMechanicList) {
+        this.carMechanicList = carMechanicList;
+    }
+
+    public Transport(String brand, String model, double engineVolume, Type type, T driver, List<CarMechanic> carMechanicList) {
         if (brand == null || brand.isBlank()) {
             this.brand = "default";
         } else {
@@ -43,17 +62,22 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
             this.engineVolume = engineVolume;
         }
         this.driver = driver;
+        this.type = type;
+        setCarMechanicList(carMechanicList);
+
     }
 
+    // абстрактный метод для вывода типа транспортного средства
     public abstract void printType();
 
     @Override
     public String toString() {
 
-        return getClass() + " марка: " + brand +
+        return getType().toString() + " марка: " + brand +
                 "; модель: " + model +
                 "; объем двигателя в литрах: " + engineVolume +
-                "; водитель " + driver + ".";
+                "; водитель " + driver +
+                "; механник " + driver + ".";
     }
 
     //    методы из интерфейса Movement
