@@ -1,5 +1,6 @@
 import com.skypro.javacourse.lessons.TransportTypeException;
 import com.skypro.javacourse.lessons.carService.CarMechanic;
+import com.skypro.javacourse.lessons.carService.ServiceStation;
 import com.skypro.javacourse.lessons.driver.DriverB;
 import com.skypro.javacourse.lessons.driver.DriverC;
 import com.skypro.javacourse.lessons.driver.DriverD;
@@ -132,6 +133,19 @@ public class Main {
         carMechanicList.get(2).performMaintenance(transports.get(0));
         carMechanicList.get(0).fixTransport(transports.get(2));
 
+        // вызываем метод для добавления в очередь на техобслуживание
+        for (Transport transport : transports) {
+            ServiceStation.addACarToTheQueue(transport);
+        }
+
+        // вызываем метод для прохождения техобслуживания
+        System.out.println();
+        ServiceStation.performACarInspection();
+        ServiceStation.performACarInspection();
+        ServiceStation.performACarInspection();
+
+        // проверяем что очеред уменьшилась
+        System.out.println(ServiceStation.getCarToTheQueue());
 
     }
 
