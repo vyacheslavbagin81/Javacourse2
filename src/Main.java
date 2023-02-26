@@ -118,25 +118,28 @@ public class Main {
         transports.get(5).printType();
         transports.get(9).printType();
 
-        // метод отправки на диагностику
+        // метод отправки на диагностику и добовляем в очередь
         System.out.println();
         checkPassDiagnostics(transports.get(2));
         checkPassDiagnostics(transports.get(6));
         checkPassDiagnostics(transports.get(9));
+        checkPassDiagnostics(transports.get(11));
+
+        // проверяем очередь
+        System.out.println();
+        System.out.println(ServiceStation.printQueue());
 
         // выводим водителя механика прикрепленного к автомобилю
+        System.out.println();
         infoDriverEndCarMechanic(transports.get(0));
         infoDriverEndCarMechanic(transports.get(5));
         infoDriverEndCarMechanic(transports.get(9));
 
         // вызываем методы класса CarMechanic
+        System.out.println();
         carMechanicList.get(2).performMaintenance(transports.get(0));
         carMechanicList.get(0).fixTransport(transports.get(2));
 
-        // вызываем метод для добавления в очередь на техобслуживание
-        for (Transport transport : transports) {
-            ServiceStation.addACarToTheQueue(transport);
-        }
 
         // вызываем метод для прохождения техобслуживания
         System.out.println();
@@ -144,8 +147,8 @@ public class Main {
         ServiceStation.performACarInspection();
         ServiceStation.performACarInspection();
 
-        // проверяем что очеред уменьшилась
-        System.out.println(ServiceStation.getCarToTheQueue());
+        // проверяем что очередь уменьшилась
+        System.out.println(ServiceStation.printQueue());
 
     }
 
@@ -161,6 +164,7 @@ public class Main {
     public static void checkPassDiagnostics(Transport transports) {
         try {
             transports.passDiagnostics();
+            ServiceStation.addACarToTheQueue(transports);
         } catch (TransportTypeException e) {
             System.err.println(e.getMessage());
         }

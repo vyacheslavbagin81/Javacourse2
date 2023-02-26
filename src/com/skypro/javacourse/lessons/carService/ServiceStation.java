@@ -14,12 +14,7 @@ public class ServiceStation {
     }
 
     public static void addACarToTheQueue(Transport transport) {
-        if (!transport.getType().equals(Type.BUS)) {
             carToTheQueue.offer(transport);
-            System.out.println(transport.getType() + " " +
-                    transport.getBrand() + " " +
-                    transport.getModel() + " добавлен в очередь.");
-        }else System.out.println("Автобусы на техобслуживание не идут.");
     }
 
     public static void performACarInspection() {
@@ -28,6 +23,13 @@ public class ServiceStation {
                 transport.getBrand() + " " +
                 transport.getModel() + " прошел техобслуживание");
     }
+    public static String printQueue() {
+        String string = "В очереди:\n";
+        for (Transport transport : carToTheQueue) {
+            string = string + transport.getType() + " " + transport.getBrand() + " " + transport.getModel() + "\n";
+        }
+        return string;
+    }
 
 
-}
+    }
