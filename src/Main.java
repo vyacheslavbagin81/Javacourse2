@@ -146,6 +146,7 @@ public class Main {
         ServiceStation.performACarInspection();
         ServiceStation.performACarInspection();
         ServiceStation.performACarInspection();
+        ServiceStation.performACarInspection();
 
         // проверяем что очередь уменьшилась
         System.out.println(ServiceStation.printQueue());

@@ -4,6 +4,7 @@ import com.skypro.javacourse.lessons.enums.Type;
 import com.skypro.javacourse.lessons.transport.Transport;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class ServiceStation {
@@ -19,14 +20,22 @@ public class ServiceStation {
 
     public static void performACarInspection() {
         Transport transport = carToTheQueue.poll();
-        System.out.println(transport.getType() + " " +
-                transport.getBrand() + " " +
-                transport.getModel() + " прошел техобслуживание");
+        if (transport != null) {
+            List<CarMechanic> carMechanics = transport.getCarMechanicList();
+            CarMechanic carMechanic = carMechanics.get(0);
+            carMechanic.performMaintenance(transport);
+        } else {
+            System.out.println("Очередь пуста");
+        }
     }
     public static String printQueue() {
         String string = "В очереди:\n";
-        for (Transport transport : carToTheQueue) {
-            string = string + transport.getType() + " " + transport.getBrand() + " " + transport.getModel() + "\n";
+        if (carToTheQueue.isEmpty()) {
+            string = "В очереди никого нет.";
+        } else {
+            for (Transport transport : carToTheQueue) {
+                string = string + transport.getType() + " " + transport.getBrand() + " " + transport.getModel() + "\n";
+            }
         }
         return string;
     }
