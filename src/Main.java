@@ -7,9 +7,7 @@ import com.skypro.javacourse.lessons.driver.DriverD;
 import com.skypro.javacourse.lessons.enums.BodyCar;
 import com.skypro.javacourse.lessons.transport.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -150,6 +148,16 @@ public class Main {
 
         // проверяем что очередь уменьшилась
         System.out.println(ServiceStation.printQueue());
+
+        // добавляем HashMap, которая в качестве ключа будет принимать автомобиль, а в качестве значения — список механиков, который его обслуживает.
+        Map<Transport<?>, List<CarMechanic>> mechanicMap = new HashMap<>();
+        for (Transport<?> transport : transports) {
+            mechanicMap.put(transport, transport.getCarMechanicList());
+        }
+
+        for (Map.Entry<Transport<?>, List<CarMechanic>> entry : mechanicMap.entrySet()){
+            System.out.println("Transport " + entry.getKey().toStringMin() + "|| Mechanic " + entry.getValue() + "\n");
+        }
 
     }
 

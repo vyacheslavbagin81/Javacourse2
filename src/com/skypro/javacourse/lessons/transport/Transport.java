@@ -8,6 +8,7 @@ import com.skypro.javacourse.lessons.enums.Type;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Transport<T extends Driver> implements Competing, Movement {
     private final String brand;
@@ -80,6 +81,12 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
                 "; механник " + driver + ".";
     }
 
+    public String toStringMin() {
+
+        return getType().toString() + " марка: " + brand +
+                "; модель: " + model + ".";
+    }
+
     //    методы из интерфейса Movement
     @Override
     public String start() {
@@ -98,5 +105,18 @@ public abstract class Transport<T extends Driver> implements Competing, Movement
 
     // метод отправки на диагностику
     public abstract void passDiagnostics() throws TransportTypeException;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return Double.compare(transport.engineVolume, engineVolume) == 0 && brand.equals(transport.brand) && model.equals(transport.model) && driver.equals(transport.driver) && type == transport.type && carMechanicList.equals(transport.carMechanicList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume, driver, type, carMechanicList);
+    }
 }
 
