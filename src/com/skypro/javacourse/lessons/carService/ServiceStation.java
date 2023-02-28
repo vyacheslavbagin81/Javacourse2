@@ -1,5 +1,6 @@
 package com.skypro.javacourse.lessons.carService;
 
+import com.skypro.javacourse.lessons.TransportTypeException;
 import com.skypro.javacourse.lessons.enums.Type;
 import com.skypro.javacourse.lessons.transport.Transport;
 
@@ -14,8 +15,22 @@ public class ServiceStation {
         return carToTheQueue;
     }
 
+    // метод для проверки на ошибку
+    private static boolean checkPassDiagnostics(Transport transports) {
+        try {
+            transports.passDiagnostics();
+            return true;
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
     public static void addACarToTheQueue(Transport transport) {
+        if (checkPassDiagnostics(transport)) {
             carToTheQueue.offer(transport);
+        }
+
     }
 
     public static void performACarInspection() {
@@ -28,6 +43,7 @@ public class ServiceStation {
             System.out.println("Очередь пуста");
         }
     }
+
     public static String printQueue() {
         String string = "В очереди:\n";
         if (carToTheQueue.isEmpty()) {
@@ -41,4 +57,4 @@ public class ServiceStation {
     }
 
 
-    }
+}

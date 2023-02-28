@@ -120,10 +120,10 @@ public class Main {
 
         // метод отправки на диагностику и добовляем в очередь
         System.out.println();
-        checkPassDiagnostics(transports.get(2));
-        checkPassDiagnostics(transports.get(6));
-        checkPassDiagnostics(transports.get(9));
-        checkPassDiagnostics(transports.get(11));
+        ServiceStation.addACarToTheQueue(transports.get(2));
+        ServiceStation.addACarToTheQueue(transports.get(6));
+        ServiceStation.addACarToTheQueue(transports.get(9));
+        ServiceStation.addACarToTheQueue(transports.get(11));
 
         // проверяем очередь
         System.out.println();
@@ -161,15 +161,15 @@ public class Main {
                 + " и будет участвовать в заезде");
     }
 
-    // метод для проверки на ошибку
-    public static void checkPassDiagnostics(Transport transports) {
-        try {
-            transports.passDiagnostics();
-            ServiceStation.addACarToTheQueue(transports);
-        } catch (TransportTypeException e) {
-            System.err.println(e.getMessage());
-        }
-    }
+//    // метод для проверки на ошибку
+//    public static void checkPassDiagnostics(Transport transports) {
+//        try {
+//            transports.passDiagnostics();
+//            ServiceStation.addACarToTheQueue(transports);
+//        } catch (TransportTypeException e) {
+//            System.err.println(e.getMessage());
+//        }
+//    }
 
     public static void infoDriverEndCarMechanic(Transport transport) {
         System.out.println("У " + transport.getType() + " " +
