@@ -6,6 +6,7 @@ import com.skypro.javacourse.lessons.enums.LoadCapacityCargoTransport;
 import com.skypro.javacourse.lessons.enums.Type;
 
 import java.util.List;
+import java.util.Objects;
 
 public class СargoTransport extends Transport<DriverC> {
     private LoadCapacityCargoTransport loadCapacityCargoTransport;
@@ -60,5 +61,19 @@ public class СargoTransport extends Transport<DriverC> {
     @Override
     public String toString() {
         return super.toString() + loadCapacityCargoTransport;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        СargoTransport that = (СargoTransport) o;
+        return loadCapacityCargoTransport == that.loadCapacityCargoTransport;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), loadCapacityCargoTransport);
     }
 }

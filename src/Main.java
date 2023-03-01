@@ -183,19 +183,10 @@ public class Main {
                 + " и будет участвовать в заезде");
     }
 
-//    // метод для проверки на ошибку
-//    public static void checkPassDiagnostics(Transport transports) {
-//        try {
-//            transports.passDiagnostics();
-//            ServiceStation.addACarToTheQueue(transports);
-//        } catch (TransportTypeException e) {
-//            System.err.println(e.getMessage());
-//        }
-//    }
-
     public static void infoDriverEndCarMechanic(Transport transport) {
         System.out.println("У " + transport.getType() + " " +
                 transport.getBrand() + " модель " + transport.getModel() +
                 " водитель " + transport.getDriver() + " и механик(и) " + transport.getCarMechanicList());
     }
+
 }

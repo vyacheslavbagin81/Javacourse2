@@ -6,6 +6,7 @@ import com.skypro.javacourse.lessons.enums.BodyCar;
 import com.skypro.javacourse.lessons.enums.Type;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class Car extends Transport<DriverB> {
@@ -40,5 +41,19 @@ public class Car extends Transport<DriverB> {
     @Override
     public void passDiagnostics() {
         System.out.println(getType().toString() + " " + getBrand() + " " + getModel() + " пора отправить на диагностику.");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Car car = (Car) o;
+        return bodyCar == car.bodyCar;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), bodyCar);
     }
 }
