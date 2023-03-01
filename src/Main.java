@@ -1,6 +1,7 @@
 import com.skypro.javacourse.lessons.TransportTypeException;
 import com.skypro.javacourse.lessons.carService.CarMechanic;
 import com.skypro.javacourse.lessons.carService.ServiceStation;
+import com.skypro.javacourse.lessons.driver.Driver;
 import com.skypro.javacourse.lessons.driver.DriverB;
 import com.skypro.javacourse.lessons.driver.DriverC;
 import com.skypro.javacourse.lessons.driver.DriverD;
@@ -171,6 +172,19 @@ public class Main {
 
         for (Map.Entry<Transport<?>, List<CarMechanic>> entry : mechanicMap.entrySet()){
             System.out.println("Transport " + entry.getKey().toStringMin() + "|| Mechanic " + entry.getValue() + "\n");
+        }
+
+        // создаем set с водителями
+        Set<Driver> driverSet = new HashSet<>();
+        for (Transport transport : transports) {
+            driverSet.add(transport.getDriver());
+        }
+
+        // создаем итератор для set с водителями и выводим в консоль
+        System.out.println();
+        Iterator<Driver> driverSetIterator = driverSet.iterator();
+        while (driverSetIterator.hasNext()) {
+            System.out.println(driverSetIterator.next());
         }
 
     }
