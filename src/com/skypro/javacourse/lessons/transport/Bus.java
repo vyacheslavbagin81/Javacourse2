@@ -1,19 +1,25 @@
 package com.skypro.javacourse.lessons.transport;
 
 import com.skypro.javacourse.lessons.TransportTypeException;
+import com.skypro.javacourse.lessons.carService.CarMechanic;
 import com.skypro.javacourse.lessons.driver.DriverD;
+import com.skypro.javacourse.lessons.enums.Type;
 import com.skypro.javacourse.lessons.enums.СapacityBus;
+
+import java.util.List;
 
 public class Bus extends Transport<DriverD> {
     private СapacityBus сapacityBus;
 
-    public Bus(String brand, String model, double engineVolume, DriverD driverD, int сapacity) {
-        super(brand, model, engineVolume, driverD);
+    public Bus(String brand, String model, double engineVolume, DriverD driverD, int сapacity, List<CarMechanic> carMechanicList) {
+        super(brand, model, engineVolume, Type.BUS, driverD, carMechanicList);
         this.сapacityBus = сapacityBusCheck(сapacity);
     }
 
-    /**    метод обработки получаемого значения вместимости пассажиров
-     * и присвоение значения из списка CapacityBus */
+    /**
+     * метод обработки получаемого значения вместимости пассажиров
+     * и присвоение значения из списка CapacityBus
+     */
 
     private СapacityBus сapacityBusCheck(int capacity) {
         if (capacity > 7 && capacity <= 120) {
@@ -53,7 +59,7 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public void printType() {
-        System.out.println("Автобус " + getBrand() + " " + getModel() + " обычно имеет " + сapacityBus.toString());
+        System.out.println(getType().toString() + " " + getBrand() + " " + getModel() + " обычно имеет " + сapacityBus.toString());
     }
 
     @Override

@@ -1,18 +1,25 @@
 package com.skypro.javacourse.lessons.transport;
 
+import com.skypro.javacourse.lessons.carService.CarMechanic;
 import com.skypro.javacourse.lessons.driver.DriverC;
 import com.skypro.javacourse.lessons.enums.LoadCapacityCargoTransport;
+import com.skypro.javacourse.lessons.enums.Type;
+
+import java.util.List;
 
 public class СargoTransport extends Transport<DriverC> {
     private LoadCapacityCargoTransport loadCapacityCargoTransport;
 
-    public СargoTransport(String brand, String model, double engineVolume, DriverC driverC, float loadCapacity) {
-        super(brand, model, engineVolume, driverC);
+    public СargoTransport(String brand, String model, double engineVolume, DriverC driverC, float loadCapacity, List<CarMechanic> carMechanicList) {
+        super(brand, model, engineVolume, Type.CARGO_TRANSPORT, driverC, carMechanicList);
         this.loadCapacityCargoTransport = loadCapacityCheck(loadCapacity);
+//        this.carMechanic = Transport.assignCarMechanic(idMechanic);
     }
 
-    /** метод обработки получаемого значения грузоподъемности
-     * и присвоение значения из списка LoadCapacityCargoTransport */
+    /**
+     * метод обработки получаемого значения грузоподъемности
+     * и присвоение значения из списка LoadCapacityCargoTransport
+     */
     private LoadCapacityCargoTransport loadCapacityCheck(float loadCapacity) {
         if (loadCapacity > 1.5 && loadCapacity < 300) {
             if (loadCapacity <= 3.5) {
@@ -32,7 +39,7 @@ public class СargoTransport extends Transport<DriverC> {
 
     @Override
     public void passDiagnostics() {
-        System.out.println("Грузовик "+getBrand()+" "+getModel()+" пора отправить на диагностику.");
+        System.out.println(getType().toString() + " " + getBrand() + " " + getModel() + " пора отправить на диагностику.");
     }
 
     @Override
@@ -47,7 +54,7 @@ public class СargoTransport extends Transport<DriverC> {
 
     @Override
     public void printType() {
-        System.out.println("Грузовик " + getBrand() + " " + getModel() + loadCapacityCargoTransport.getLoadCapacity());
+        System.out.println(getType().toString() + " " + getBrand() + " " + getModel() + loadCapacityCargoTransport.getLoadCapacity());
     }
 
     @Override

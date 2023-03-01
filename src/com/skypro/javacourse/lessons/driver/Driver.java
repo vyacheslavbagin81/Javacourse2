@@ -37,8 +37,8 @@ public abstract class Driver implements Movement {
 
     @Override
     public String toString() {
-        return "ФИО: " + fullName + '\'' +
+        return "ФИО: " + fullName +
                 "; наличие прав - " + driversLicense +
-                "; стаж вождения - " + drivingExperience;
+                "; стаж вождения (лет) - " + drivingExperience + ";";
     }
 }

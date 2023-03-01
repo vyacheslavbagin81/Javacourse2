@@ -1,14 +1,20 @@
 package com.skypro.javacourse.lessons.transport;
 
+import com.skypro.javacourse.lessons.carService.CarMechanic;
 import com.skypro.javacourse.lessons.driver.DriverB;
 import com.skypro.javacourse.lessons.enums.BodyCar;
+import com.skypro.javacourse.lessons.enums.Type;
+
+import java.util.List;
+
 
 public class Car extends Transport<DriverB> {
     private BodyCar bodyCar;
 
-    public Car(String brand, String model, double engineVolume, BodyCar bodyCar, DriverB driverB) {
-        super(brand, model, engineVolume, driverB);
+    public Car(String brand, String model, double engineVolume, BodyCar bodyCar, DriverB driver, List<CarMechanic> carMechanicList) {
+        super(brand, model, engineVolume, Type.CAR, driver, carMechanicList);
         this.bodyCar = bodyCar;
+//        this.carMechanic = Transport.assignCarMechanic(idMechanic);
     }
 
     @Override
@@ -23,7 +29,7 @@ public class Car extends Transport<DriverB> {
 
     @Override
     public void printType() {
-        System.out.println("Автомобиль " + getBrand() + " " + getModel() +" тип кузова "+ bodyCar.getBody());
+        System.out.println(getType().toString() + " " + getBrand() + " " + getModel() + " тип кузова " + bodyCar.getBody());
     }
 
     @Override
@@ -33,6 +39,6 @@ public class Car extends Transport<DriverB> {
 
     @Override
     public void passDiagnostics() {
-        System.out.println("Автомобиль " + getBrand() + " " + getModel() + " пора отправить на диагностику.");
+        System.out.println(getType().toString() + " " + getBrand() + " " + getModel() + " пора отправить на диагностику.");
     }
 }
