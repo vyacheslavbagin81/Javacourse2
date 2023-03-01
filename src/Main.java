@@ -120,10 +120,24 @@ public class Main {
 
         // метод отправки на диагностику и добовляем в очередь
         System.out.println();
-        ServiceStation.addACarToTheQueue(transports.get(2));
-        ServiceStation.addACarToTheQueue(transports.get(6));
-        ServiceStation.addACarToTheQueue(transports.get(9));
-        ServiceStation.addACarToTheQueue(transports.get(11));
+        try {
+            ServiceStation.addACarToTheQueue(transports.get(2));
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+        }try {
+            ServiceStation.addACarToTheQueue(transports.get(6));
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+        }try {
+            ServiceStation.addACarToTheQueue(transports.get(9));
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+        }try {
+            ServiceStation.addACarToTheQueue(transports.get(11));
+        } catch (TransportTypeException e) {
+            System.err.println(e.getMessage());
+        }
+
 
         // проверяем очередь
         System.out.println();

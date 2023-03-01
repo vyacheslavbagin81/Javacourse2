@@ -15,22 +15,9 @@ public class ServiceStation {
         return carToTheQueue;
     }
 
-    // метод для проверки на ошибку
-    private static boolean checkPassDiagnostics(Transport transports) {
-        try {
-            transports.passDiagnostics();
-            return true;
-        } catch (TransportTypeException e) {
-            System.err.println(e.getMessage());
-            return false;
-        }
-    }
-
-    public static void addACarToTheQueue(Transport transport) {
-        if (checkPassDiagnostics(transport)) {
-            carToTheQueue.offer(transport);
-        }
-
+    public static void addACarToTheQueue(Transport transport) throws TransportTypeException {
+        transport.passDiagnostics();
+        carToTheQueue.offer(transport);
     }
 
     public static void performACarInspection() {
