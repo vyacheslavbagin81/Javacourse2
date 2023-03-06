@@ -2,7 +2,6 @@ package com.skypro.javacourse.lessons.interfacesAndLambdas;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -164,8 +163,8 @@ public class FunctionalInterfacesAndLambdas {
         numbers.add(-20);
         System.out.println(numbers.toString());
 
-        Function<Integer, String> ifTrue = (x -> Integer.toString(x) + " не отрицательное число");
-        Function<Integer, String> ifFalse = (x -> Integer.toString(x) + " отрицательное число");
+        Function<Integer, String> ifTrue = (x -> x + " не отрицательное число");
+        Function<Integer, String> ifFalse = (x -> x + " отрицательное число");
         Predicate<Integer> testNumber = new Predicate<Integer>() {
             @Override
             public boolean test(Integer integer) {
