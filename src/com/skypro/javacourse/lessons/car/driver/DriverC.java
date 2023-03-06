@@ -1,4 +1,4 @@
-package com.skypro.javacourse.lessons.driver;
+package com.skypro.javacourse.lessons.car.driver;
 
 public class DriverC extends Driver {
     public DriverC(String fullName, boolean driversLicense, int drivingExperience) {

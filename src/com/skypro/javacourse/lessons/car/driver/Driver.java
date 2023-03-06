@@ -1,7 +1,7 @@
-package com.skypro.javacourse.lessons.driver;
+package com.skypro.javacourse.lessons.car.driver;
 
 
-import com.skypro.javacourse.lessons.Movement;
+import com.skypro.javacourse.lessons.car.Movement;
 
 public abstract class Driver implements Movement {
     String fullName;

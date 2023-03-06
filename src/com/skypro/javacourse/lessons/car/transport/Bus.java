@@ -1,10 +1,10 @@
-package com.skypro.javacourse.lessons.transport;
+package com.skypro.javacourse.lessons.car.transport;
 
-import com.skypro.javacourse.lessons.TransportTypeException;
-import com.skypro.javacourse.lessons.carService.CarMechanic;
-import com.skypro.javacourse.lessons.driver.DriverD;
-import com.skypro.javacourse.lessons.enums.Type;
-import com.skypro.javacourse.lessons.enums.СapacityBus;
+import com.skypro.javacourse.lessons.car.TransportTypeException;
+import com.skypro.javacourse.lessons.car.carService.CarMechanic;
+import com.skypro.javacourse.lessons.car.driver.DriverD;
+import com.skypro.javacourse.lessons.car.enums.Type;
+import com.skypro.javacourse.lessons.car.enums.СapacityBus;
 
 import java.util.List;
 import java.util.Objects;

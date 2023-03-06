@@ -1,9 +1,9 @@
-package com.skypro.javacourse.lessons.transport;
+package com.skypro.javacourse.lessons.car.transport;
 
-import com.skypro.javacourse.lessons.carService.CarMechanic;
-import com.skypro.javacourse.lessons.driver.DriverC;
-import com.skypro.javacourse.lessons.enums.LoadCapacityCargoTransport;
-import com.skypro.javacourse.lessons.enums.Type;
+import com.skypro.javacourse.lessons.car.carService.CarMechanic;
+import com.skypro.javacourse.lessons.car.driver.DriverC;
+import com.skypro.javacourse.lessons.car.enums.LoadCapacityCargoTransport;
+import com.skypro.javacourse.lessons.car.enums.Type;
 
 import java.util.List;
 import java.util.Objects;

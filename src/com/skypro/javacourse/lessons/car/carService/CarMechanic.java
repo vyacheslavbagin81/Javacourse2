@@ -1,6 +1,6 @@
-package com.skypro.javacourse.lessons.carService;
+package com.skypro.javacourse.lessons.car.carService;
 
-import com.skypro.javacourse.lessons.transport.Transport;
+import com.skypro.javacourse.lessons.car.transport.Transport;
 
 public class CarMechanic {
     private final String fullNname;

@@ -1,4 +1,4 @@
-package com.skypro.javacourse.lessons.enums;
+package com.skypro.javacourse.lessons.car.enums;
 
 public enum СapacityBus {
     ESPECIALLY_SMALL(0, 10),

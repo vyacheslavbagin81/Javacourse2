@@ -1,4 +1,4 @@
-package com.skypro.javacourse.lessons;
+package com.skypro.javacourse.lessons.car;
 
 public interface Movement {
     String pitStop();

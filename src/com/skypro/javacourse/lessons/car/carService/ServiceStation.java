@@ -1,8 +1,7 @@
-package com.skypro.javacourse.lessons.carService;
+package com.skypro.javacourse.lessons.car.carService;
 
-import com.skypro.javacourse.lessons.TransportTypeException;
-import com.skypro.javacourse.lessons.enums.Type;
-import com.skypro.javacourse.lessons.transport.Transport;
+import com.skypro.javacourse.lessons.car.TransportTypeException;
+import com.skypro.javacourse.lessons.car.transport.Transport;
 
 import java.util.LinkedList;
 import java.util.List;

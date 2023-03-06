@@ -1,4 +1,4 @@
-package com.skypro.javacourse.lessons.transport;
+package com.skypro.javacourse.lessons.car.transport;
 
 public interface Competing {
 
